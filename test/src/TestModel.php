@@ -18,7 +18,5 @@ class TestModel extends Tester
      */
     public function run()
     {
-        \Demo::test();
-        Lib::test();
     }
 }

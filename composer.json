@@ -1,11 +1,12 @@
 {
-    "name": "qingbing/php-demo",
-    "description": "demo 配置的设置和获取.",
+    "name": "qingbing/php-model",
+    "description": "model 模型的抽象.",
     "type": "library",
     "license": "MIT",
     "keywords": [
         "php",
-        "demo"
+        "html",
+        "model"
     ],
     "homepage": "http://www.phpcorner.net",
     "authors": [
