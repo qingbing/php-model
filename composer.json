@@ -1,0 +1,35 @@
+{
+    "name": "qingbing/php-demo",
+    "description": "demo 配置的设置和获取.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "demo"
+    ],
+    "homepage": "http://www.phpcorner.net",
+    "authors": [
+        {
+            "name": "qingbing",
+            "email": "780042175@qq.com"
+        }
+    ],
+    "require": {
+        "qingbing/php-helper": ">=1.0, <2.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/Html.php",
+            "src/Model.php"
+        ],
+        "psr-4": {
+            "Demo\\": "src/lib"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TestCore\\": "test/core",
+            "Test\\": "test/src"
+        }
+    }
+}
