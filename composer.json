@@ -23,7 +23,7 @@
             "src/Model.php"
         ],
         "psr-4": {
-            "Demo\\": "src/lib"
+            "Model\\": "src/lib"
         }
     },
     "autoload-dev": {
