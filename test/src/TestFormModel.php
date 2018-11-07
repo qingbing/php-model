@@ -10,7 +10,7 @@ namespace Test;
 
 use TestCore\Tester;
 
-class TestHtml extends Tester
+class TestFormModel extends Tester
 {
     /**
      * 执行函数
@@ -18,6 +18,5 @@ class TestHtml extends Tester
      */
     public function run()
     {
-
     }
 }

@@ -5,8 +5,9 @@
     "license": "MIT",
     "keywords": [
         "php",
-        "html",
-        "model"
+        "model",
+        "validator",
+        "model-validate"
     ],
     "homepage": "http://www.phpcorner.net",
     "authors": [
@@ -20,8 +21,7 @@
     },
     "autoload": {
         "classmap": [
-            "src/Html.php",
-            "src/Model.php"
+            "src/FormModel.php"
         ],
         "psr-4": {
             "Model\\": "src/lib"
