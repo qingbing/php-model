@@ -30,6 +30,7 @@
     "autoload-dev": {
         "psr-4": {
             "TestCore\\": "test/core",
+            "TestClass\\": "test/class",
             "Test\\": "test/src"
         }
     }
