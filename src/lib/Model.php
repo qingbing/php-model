@@ -118,7 +118,7 @@ abstract class Model
                 throw new Exception(str_cover('在Model"{model}"中找不到属性"{attribute}"', [
                     '{model}' => get_class($this),
                     '{attribute}' => $attribute,
-                ]));
+                ]), 101100101);
             }
             return $this->_attributeLabels[$attribute] = $this->generateAttributeLabel($attribute);
         }
@@ -245,7 +245,7 @@ abstract class Model
             } else {
                 throw new Exception(str_cover('"{class}"指定了无效验证规则，规则必须指定验证器名和需要验证属性', [
                     '{class}' => get_class($this),
-                ]));
+                ]), 101100102);
             }
         }
         return $validators;
@@ -318,7 +318,7 @@ abstract class Model
                 throw new Exception(str_cover('设置"{class}.{attribute}"失败', [
                     '{attribute}' => $name,
                     '{class}' => get_class($this)
-                ]));
+                ]), 101100103);
             }
         }
         return $this;
@@ -345,8 +345,7 @@ abstract class Model
      * @param array|null $attributes
      * @param bool|true $clearErrors
      * @return bool
-     * @throws Exception
-     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function validate($attributes = null, $clearErrors = true)
     {

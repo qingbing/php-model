@@ -35,7 +35,7 @@ class RegularExpressionValidator extends Validator
             return;
         }
         if (null === $this->pattern) {
-            throw new Exception('验证表达式无效');
+            throw new Exception('验证正则表达式无效', 101100501);
         }
         // 正则表达式验证
         if (

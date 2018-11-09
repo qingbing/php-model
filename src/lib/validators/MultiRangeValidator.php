@@ -2,7 +2,7 @@
 /**
  * Link         :   http://www.phpcorner.net
  * User         :   qingbing<780042175@qq.com>
- * Date         :   2018-11-08
+ * Date         :   2018-11-09
  * Version      :   1.0
  */
 
@@ -11,14 +11,14 @@ namespace Model\validators;
 use Helper\Exception;
 use Model\Validator;
 
-class RangeValidator extends Validator
+class MultiRangeValidator extends Validator
 {
-    /* @var array 设置值的范围 */
+    /* @var string 自定义的错误消息："{attribute}"可以替代成属性的"label" */
+    public $message = '"{attribute}"必须为列表赋值';
+    /* @var array 范围 */
     public $range = [];
     /* @var bool 是否执行严格验证 */
     public $strict = false;
-    /* @var bool 是否排除在范围之外，默认在范围之内 */
-    public $not = false;
 
     /**
      * 通过当前规则验证属性，如果有验证不通过的情况，将通过 model 的 addError 方法添加错误信息
@@ -34,25 +34,43 @@ class RangeValidator extends Validator
             return;
         }
         if (!is_array($this->range)) {
-            throw new Exception(str_cover('必须指定"range"属性，且为数组列表'), 101100601);
+            throw new Exception('属性"range"必须定义为数组', 101100301);
         }
-        $isIn = false;
+
+        if (is_array($value)) {
+            $noIn = [];
+            foreach ($value as $v) {
+                if (false === $this->inArray($v)) {
+                    $noIn[] = $v;
+                }
+            }
+            $isIn = empty($noIn);
+        } else {
+            $isIn = $this->inArray($value);
+        }
+
+        if (!$isIn) {
+            $this->addError($object, $attribute, $this->message);
+            return;
+        }
+    }
+
+    /**
+     * 判断值是否在范围之内
+     * @param mixed $value
+     * @return bool
+     */
+    protected function inArray($value)
+    {
         if ($this->strict) {
             $isIn = in_array($value, $this->range, true);
         } else {
+            $isIn = false;
             foreach ($this->range as $r) {
                 $isIn = (strcmp($r, $value) === 0);
                 if ($isIn) break;
             }
         }
-        if (!$this->not && !$isIn) {
-            $message = $this->message !== null ? $this->message : '"{attribute}"必须在数组列表之中';
-            $this->addError($object, $attribute, $message);
-            return;
-        }
-        if ($this->not && $isIn) {
-            $message = $this->message !== null ? $this->message : '"{attribute}"必须在数组列表之外';
-            $this->addError($object, $attribute, $message);
-        }
+        return $isIn;
     }
 }

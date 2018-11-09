@@ -72,6 +72,11 @@ class TestFormModel extends Tester
             'string' => 'apple',
             'type' => '2018-09-01 01:01:01',
             'match' => '2018',
+            'url' => 'http://www.baidu.com',
+            'callable' => 11,
+            'multiIn' => ['pear'],
+            'username' => '12',
+            'zip' => '12',
         ]);
 
         // 验证 model 属性

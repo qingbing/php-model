@@ -20,6 +20,7 @@ class ValidatorFactory
         'boolean' => '\Model\validators\BooleanValidator',
         'compare' => '\Model\validators\CompareValidator',
         'contact' => '\Model\validators\ContactValidator',
+        'callable' => '\Model\validators\CallableValidator',
         'datetime' => '\Model\validators\DatetimeValidator',
         'date' => '\Model\validators\DateValidator',
         'default' => '\Model\validators\DefaultValueValidator',
@@ -31,7 +32,6 @@ class ValidatorFactory
         'phone' => '\Model\validators\PhoneValidator',
         'in' => '\Model\validators\RangeValidator',
         'email' => '\Model\validators\EmailValidator',
-        'filter' => '\Model\validators\FilterValidator',
         'match' => '\Model\validators\RegularExpressionValidator',
         'required' => '\Model\validators\RequiredValidator',
         'safe' => '\Model\validators\SafeValidator',
@@ -40,10 +40,7 @@ class ValidatorFactory
         'url' => '\Model\validators\UrlValidator',
         'username' => '\Model\validators\UsernameValidator',
         'fax' => '\Model\validators\FaxValidator',
-        'file' => '\Model\validators\FileValidator',
-        'captcha' => '\Model\validators\CaptchaValidator',
         'zip' => '\Model\validators\ZipValidator',
-        'unique' => '\Model\validators\UniqueValidator',
     ];
 
     /**

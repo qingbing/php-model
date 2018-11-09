@@ -27,6 +27,11 @@ class TestForm extends \FormModel
     public $string;
     public $type;
     public $match;
+    public $url;
+    public $callable;
+    public $multiIn;
+    public $username;
+    public $zip;
 
     /**
      * 验证规则
@@ -52,6 +57,19 @@ class TestForm extends \FormModel
             ['string', 'string', 'maxLength' => 10, 'minLength' => 5],
             ['type', 'datetime'],
             ['match', 'match', 'pattern' => '/^\d{2,6}$/'],
+            ['url', 'url'],
+            ['callable', 'callable', 'callback' => [$this, 'callback']],
+            ['multiIn', 'multiIn', 'range' => ['apple', 'pear', 'banana']],
+            ['username', 'username'],
+            ['zip', 'zip'],
         ];
+    }
+
+    public function callback($object, $attribute)
+    {
+        $value = $object->{$attribute};
+        if ($value !== 11) {
+            $this->addError($attribute, '请指定为11');
+        }
     }
 }
