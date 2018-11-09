@@ -8,7 +8,6 @@
 
 namespace Model\validators;
 
-
 use Model\Validator;
 
 abstract class PregValidator extends Validator

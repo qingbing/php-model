@@ -21,13 +21,13 @@ class UrlValidator extends Validator
      */
     protected function validateAttribute($object, $attribute)
     {
-        $value = $object->$attribute;
+        $value = $object->{$attribute};
         if ($this->isEmpty($value)) {
             $this->validateEmpty($object, $attribute);
             return;
         }
         if (false !== ($value = $this->validateValue($value))) {
-            $object->$attribute = $value;
+            $object->{$attribute} = $value;
         } else {
             $this->addError($object, $attribute, $this->message);
         }

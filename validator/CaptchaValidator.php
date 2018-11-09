@@ -24,7 +24,7 @@ class CaptchaValidator extends Validator
      */
     protected function validateAttribute($object, $attribute)
     {
-        $value = $object->$attribute;
+        $value = $object->{$attribute};
         if ($this->isEmpty($value)) {
             $this->validateEmpty($object, $attribute);
             return;

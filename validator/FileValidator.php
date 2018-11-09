@@ -77,7 +77,7 @@ class FileValidator extends Validator
     protected function validateAttribute($object, $attribute)
     {
         if ($this->maxFiles > 1) {
-            $files = $object->$attribute;
+            $files = $object->{$attribute};
             if (!is_array($files) || !isset($files[0]) || !$files[0] instanceof UploadFile) {
                 $files = UploadFile::getInstances($object, $attribute);
             }
@@ -94,7 +94,7 @@ class FileValidator extends Validator
                     $this->validateFile($object, $attribute, $file);
                 }
         } else {
-            $file = $object->$attribute;
+            $file = $object->{$attribute};
             if (!$file instanceof UploadFile) {
                 $file = UploadFile::getInstance($object, $attribute);
                 if (null === $file) {

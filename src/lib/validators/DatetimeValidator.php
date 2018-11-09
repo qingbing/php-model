@@ -8,9 +8,10 @@
 
 namespace Model\validators;
 
-
 class DatetimeValidator extends DateValidator
 {
-    public $message = '"{attribute}" does not match the datetime format.';
-    public $format = 'yyyy-MM-dd hh:mm:ss'; // 时间的格式化形式
+    /* @var string 自定义的错误消息："{attribute}"可以替代成属性的"label" */
+    public $message = '"{attribute}"不是有效的时间格式';
+    /* @var string 时间的格式化形式 */
+    public $format = 'yyyy-MM-dd hh:mm:ss';
 }

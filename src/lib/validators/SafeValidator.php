@@ -8,7 +8,6 @@
 
 namespace Model\validators;
 
-
 use Model\Validator;
 
 class SafeValidator extends Validator

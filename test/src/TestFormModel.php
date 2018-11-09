@@ -58,7 +58,20 @@ class TestFormModel extends Tester
         $model->setAttributes([
             'email' => 'ddd@ss.com',
             'boolean' => '1',
-            'contact' => '1234',
+            'contact' => '028-46664743',
+            'date' => '2018-09-01',
+            'datetime' => '2018-09-01 01:01:01',
+            'fax' => '028-46664743',
+            'ip' => '192.128.11.2',
+            'mobile' => '13999999999',
+            'numerical' => '5',
+            'password' => '511111',
+            'phone' => '028-46664743',
+            'required' => '028-46664743',
+            'in' => 'pear',
+            'string' => 'apple',
+            'type' => '2018-09-01 01:01:01',
+            'match' => '2018',
         ]);
 
         // 验证 model 属性
