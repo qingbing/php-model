@@ -8,10 +8,11 @@
 
 namespace Model;
 
+use Helper\Base;
 use Helper\Exception;
 use Model\validators\SafeValidator;
 
-abstract class Model
+abstract class Model extends Base
 {
     private $_scenario = ''; // 场景（scenario）
     private $_attributeLabels = [];
