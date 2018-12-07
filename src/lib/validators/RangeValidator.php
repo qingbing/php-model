@@ -9,7 +9,7 @@
 namespace Model\validators;
 
 use Helper\Exception;
-use Model\Validator;
+use Abstracts\Validator;
 
 class RangeValidator extends Validator
 {
@@ -22,7 +22,7 @@ class RangeValidator extends Validator
 
     /**
      * 通过当前规则验证属性，如果有验证不通过的情况，将通过 model 的 addError 方法添加错误信息
-     * @param \Model\Model $object
+     * @param \Abstracts\Model $object
      * @param string $attribute
      * @throws \Exception
      */
@@ -34,7 +34,7 @@ class RangeValidator extends Validator
             return;
         }
         if (!is_array($this->range)) {
-            throw new Exception(str_cover('必须指定"range"属性，且为数组列表'), 101100601);
+            throw new Exception(str_cover('必须指定"range"属性，且为数组列表'), 101400601);
         }
         $isIn = false;
         if ($this->strict) {

@@ -1,16 +1,17 @@
 <?php
-
-use Helper\Unit;
-use Model\Model;
-
-defined('PHP_DEBUG') or define('PHP_DEBUG', false);
-
 /**
  * Link         :   http://www.phpcorner.net
  * User         :   qingbing<780042175@qq.com>
- * Date         :   2018-11-07
+ * Date         :   2018-12-07
  * Version      :   1.0
  */
+
+namespace Abstracts;
+
+use Helper\Unit;
+
+defined('PHP_DEBUG') or define('PHP_DEBUG', false);
+
 abstract class FormModel extends Model
 {
     private static $_names = [];
@@ -27,7 +28,7 @@ abstract class FormModel extends Model
     /**
      * 返回属性名称列表
      * @return array
-     * @throws ReflectionException
+     * @throws \ReflectionException
      */
     public function attributeNames()
     {

@@ -8,9 +8,8 @@
 
 namespace Model\validators;
 
-
 use Helper\Exception;
-use Model\Validator;
+use Abstracts\Validator;
 
 class CompareValidator extends Validator
 {
@@ -36,7 +35,7 @@ class CompareValidator extends Validator
 
     /**
      * 通过当前规则验证属性，如果有验证不通过的情况，将通过 model 的 addError 方法添加错误信息
-     * @param \Model\Model $object
+     * @param \Abstracts\Model $object
      * @param string $attribute
      * @throws \Exception
      */
@@ -90,7 +89,7 @@ class CompareValidator extends Validator
             default:
                 throw new Exception(str_cover('无效的对比操作符"{operator}"', [
                     '{operator}' => $this->operator,
-                ]), 101100201);
+                ]), 101400201);
         }
         if (!empty($message)) {
             $this->addError($object, $attribute, $message, [

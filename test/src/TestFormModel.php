@@ -8,7 +8,6 @@
 
 namespace Test;
 
-use TestClass\LoginForm;
 use TestClass\TestForm;
 use TestCore\Tester;
 

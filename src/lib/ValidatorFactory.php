@@ -46,10 +46,10 @@ class ValidatorFactory
     /**
      * 创建验证器
      * @param string $name
-     * @param \Model\Model $object
+     * @param \Abstracts\Model $object
      * @param array $attributes
      * @param array $params
-     * @return \Model\Validator
+     * @return \Abstracts\Validator
      * @throws \Helper\Exception
      * @throws \ReflectionException
      */

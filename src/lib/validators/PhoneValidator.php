@@ -8,7 +8,6 @@
 
 namespace Model\validators;
 
-
 class PhoneValidator extends PregValidator
 {
     /* @var string 自定义的错误消息："{attribute}"可以替代成属性的"label" */

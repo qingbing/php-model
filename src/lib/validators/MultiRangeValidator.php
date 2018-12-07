@@ -9,7 +9,7 @@
 namespace Model\validators;
 
 use Helper\Exception;
-use Model\Validator;
+use Abstracts\Validator;
 
 class MultiRangeValidator extends Validator
 {
@@ -22,7 +22,7 @@ class MultiRangeValidator extends Validator
 
     /**
      * 通过当前规则验证属性，如果有验证不通过的情况，将通过 model 的 addError 方法添加错误信息
-     * @param \Model\Model $object
+     * @param \Abstracts\Model $object
      * @param string $attribute
      * @throws \Exception
      */
@@ -34,7 +34,7 @@ class MultiRangeValidator extends Validator
             return;
         }
         if (!is_array($this->range)) {
-            throw new Exception('属性"range"必须定义为数组', 101100301);
+            throw new Exception('属性"range"必须定义为数组', 101400301);
         }
 
         if (is_array($value)) {

@@ -2,14 +2,14 @@
 /**
  * Link         :   http://www.phpcorner.net
  * User         :   qingbing<780042175@qq.com>
- * Date         :   2018-11-07
+ * Date         :   2018-12-07
  * Version      :   1.0
  */
-
-namespace Model;
+namespace Abstracts;
 
 use Helper\Base;
 use Helper\Exception;
+use Model\ValidatorFactory;
 use Model\validators\SafeValidator;
 
 abstract class Model extends Base
@@ -119,7 +119,7 @@ abstract class Model extends Base
                 throw new Exception(str_cover('在Model"{model}"中找不到属性"{attribute}"', [
                     '{model}' => get_class($this),
                     '{attribute}' => $attribute,
-                ]), 101100101);
+                ]), 101400101);
             }
             return $this->_attributeLabels[$attribute] = $this->generateAttributeLabel($attribute);
         }
@@ -246,7 +246,7 @@ abstract class Model extends Base
             } else {
                 throw new Exception(str_cover('"{class}"指定了无效验证规则，规则必须指定验证器名和需要验证属性', [
                     '{class}' => get_class($this),
-                ]), 101100102);
+                ]), 101400102);
             }
         }
         return $validators;
@@ -319,7 +319,7 @@ abstract class Model extends Base
                 throw new Exception(str_cover('设置"{class}.{attribute}"失败', [
                     '{attribute}' => $name,
                     '{class}' => get_class($this)
-                ]), 101100103);
+                ]), 101400103);
             }
         }
         return $this;

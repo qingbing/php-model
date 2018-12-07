@@ -8,7 +8,9 @@
 
 namespace TestClass;
 
-class TestForm extends \FormModel
+use Abstracts\FormModel;
+
+class TestForm extends FormModel
 {
     public $email;
     public $boolean;

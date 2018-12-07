@@ -8,9 +8,8 @@
 
 namespace Model\validators;
 
-
 use Helper\Exception;
-use Model\Validator;
+use Abstracts\Validator;
 
 class RegularExpressionValidator extends Validator
 {
@@ -23,7 +22,7 @@ class RegularExpressionValidator extends Validator
 
     /**
      * 通过当前规则验证属性，如果有验证不通过的情况，将通过 model 的 addError 方法添加错误信息
-     * @param \Model\Model $object
+     * @param \Abstracts\Model $object
      * @param string $attribute
      * @throws \Exception
      */
@@ -35,7 +34,7 @@ class RegularExpressionValidator extends Validator
             return;
         }
         if (null === $this->pattern) {
-            throw new Exception('验证正则表达式无效', 101100501);
+            throw new Exception('验证正则表达式无效', 101400501);
         }
         // 正则表达式验证
         if (

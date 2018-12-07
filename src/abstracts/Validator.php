@@ -2,11 +2,11 @@
 /**
  * Link         :   http://www.phpcorner.net
  * User         :   qingbing<780042175@qq.com>
- * Date         :   2018-11-07
+ * Date         :   2018-12-07
  * Version      :   1.0
  */
 
-namespace Model;
+namespace Abstracts;
 
 use Helper\Base;
 
@@ -55,7 +55,7 @@ abstract class Validator extends Base
 
     /**
      * 添加一个特定属性的验证错误消息
-     * @param \Model\Model $object
+     * @param Model $object
      * @param string $attribute
      * @param string $message
      * @param array $params
@@ -69,7 +69,7 @@ abstract class Validator extends Base
 
     /**
      * 判断当不允许为空时添加错误消息
-     * @param \Model\Model $object
+     * @param Model $object
      * @param string $attribute
      * @throws \Exception
      */
@@ -82,7 +82,7 @@ abstract class Validator extends Base
 
     /**
      * Model 的验证属性
-     * @param \Model\Model $object
+     * @param Model $object
      * @param array $attributes
      * @throws \Exception
      */
@@ -102,7 +102,7 @@ abstract class Validator extends Base
 
     /**
      * 通过当前规则验证属性，如果有验证不通过的情况，将通过 model 的 addError 方法添加错误信息
-     * @param \Model\Model $object
+     * @param Model $object
      * @param string $attribute
      * @throws \Exception
      */

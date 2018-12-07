@@ -9,7 +9,7 @@
 namespace Model\validators;
 
 use Helper\DateTimeParser;
-use Model\Validator;
+use Abstracts\Validator;
 
 class TypeValidator extends Validator
 {
@@ -28,7 +28,7 @@ class TypeValidator extends Validator
 
     /**
      * 通过当前规则验证属性，如果有验证不通过的情况，将通过 model 的 addError 方法添加错误信息
-     * @param \Model\Model $object
+     * @param \Abstracts\Model $object
      * @param string $attribute
      * @throws \Exception
      */

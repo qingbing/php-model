@@ -8,13 +8,13 @@
 
 namespace Model\validators;
 
-use Model\Validator;
+use Abstracts\Validator;
 
 class SafeValidator extends Validator
 {
     /**
      * 该规则被认为是无需检测属性
-     * @param \Model\Model $object
+     * @param \Abstracts\Model $object
      * @param string $attribute
      */
     protected function validateAttribute($object, $attribute)

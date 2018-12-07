@@ -8,7 +8,7 @@
 
 namespace Model\validators;
 
-use Model\Validator;
+use Abstracts\Validator;
 
 defined('APP_CHARSET') or define('APP_CHARSET', 'utf-8');
 
@@ -29,7 +29,7 @@ class StringValidator extends Validator
 
     /**
      * 通过当前规则验证属性，如果有验证不通过的情况，将通过 model 的 addError 方法添加错误信息
-     * @param \Model\Model $object
+     * @param \Abstracts\Model $object
      * @param string $attribute
      * @throws \Exception
      */

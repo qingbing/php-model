@@ -8,7 +8,7 @@
 
 namespace Model\validators;
 
-use Model\Validator;
+use Abstracts\Validator;
 
 class BooleanValidator extends Validator
 {
@@ -23,7 +23,7 @@ class BooleanValidator extends Validator
 
     /**
      * 验证是否为符合规则的 "boolean" 值，如果有验证不通过的情况，将通过 model 的 addError 方法添加错误信息
-     * @param \Model\Model $object
+     * @param \Abstracts\Model $object
      * @param string $attribute
      * @throws \Exception
      */
