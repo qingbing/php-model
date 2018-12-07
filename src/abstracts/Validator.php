@@ -8,8 +8,6 @@
 
 namespace Abstracts;
 
-use Helper\Base;
-
 abstract class Validator extends Base
 {
     /* @var array 需要验证属性 */

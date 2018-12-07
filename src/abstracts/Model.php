@@ -7,7 +7,6 @@
  */
 namespace Abstracts;
 
-use Helper\Base;
 use Helper\Exception;
 use Model\ValidatorFactory;
 use Model\validators\SafeValidator;
