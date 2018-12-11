@@ -10,8 +10,6 @@ namespace Abstracts;
 
 use Helper\Unit;
 
-defined('PHP_DEBUG') or define('PHP_DEBUG', false);
-
 abstract class FormModel extends Model
 {
     private static $_names = [];

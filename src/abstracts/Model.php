@@ -5,11 +5,14 @@
  * Date         :   2018-12-07
  * Version      :   1.0
  */
+
 namespace Abstracts;
 
 use Helper\Exception;
 use Model\ValidatorFactory;
 use Model\validators\SafeValidator;
+
+defined('APP_DEBUG') or define('APP_DEBUG', false);
 
 abstract class Model extends Base
 {
@@ -314,7 +317,7 @@ abstract class Model extends Base
         foreach ($values as $name => $value) {
             if (isset($attributes[$name])) {
                 $this->{$name} = $value;
-            } else if ($unsafeOnly && PHP_DEBUG) {
+            } else if ($unsafeOnly && APP_DEBUG) {
                 throw new Exception(str_cover('设置"{class}.{attribute}"失败', [
                     '{attribute}' => $name,
                     '{class}' => get_class($this)
