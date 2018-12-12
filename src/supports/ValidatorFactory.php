@@ -6,7 +6,7 @@
  * Version      :   1.0
  */
 
-namespace Model;
+namespace ModelSupports;
 
 use Helper\Unit;
 
@@ -17,30 +17,30 @@ class ValidatorFactory
      * @var array
      */
     public static $builtInValidators = [
-        'boolean' => '\Model\validators\BooleanValidator',
-        'compare' => '\Model\validators\CompareValidator',
-        'contact' => '\Model\validators\ContactValidator',
-        'callable' => '\Model\validators\CallableValidator',
-        'datetime' => '\Model\validators\DatetimeValidator',
-        'date' => '\Model\validators\DateValidator',
-        'default' => '\Model\validators\DefaultValueValidator',
-        'ip' => '\Model\validators\IpValidator',
-        'mobile' => '\Model\validators\MobileValidator',
-        'multiIn' => '\Model\validators\MultiRangeValidator',
-        'numerical' => '\Model\validators\NumberValidator',
-        'password' => '\Model\validators\PasswordValidator',
-        'phone' => '\Model\validators\PhoneValidator',
-        'in' => '\Model\validators\RangeValidator',
-        'email' => '\Model\validators\EmailValidator',
-        'match' => '\Model\validators\RegularExpressionValidator',
-        'required' => '\Model\validators\RequiredValidator',
-        'safe' => '\Model\validators\SafeValidator',
-        'string' => '\Model\validators\StringValidator',
-        'type' => '\Model\validators\TypeValidator',
-        'url' => '\Model\validators\UrlValidator',
-        'username' => '\Model\validators\UsernameValidator',
-        'fax' => '\Model\validators\FaxValidator',
-        'zip' => '\Model\validators\ZipValidator',
+        'boolean' => '\ModelSupports\validators\BooleanValidator',
+        'compare' => '\ModelSupports\validators\CompareValidator',
+        'contact' => '\ModelSupports\validators\ContactValidator',
+        'callable' => '\ModelSupports\validators\CallableValidator',
+        'datetime' => '\ModelSupports\validators\DatetimeValidator',
+        'date' => '\ModelSupports\validators\DateValidator',
+        'default' => '\ModelSupports\validators\DefaultValueValidator',
+        'ip' => '\ModelSupports\validators\IpValidator',
+        'mobile' => '\ModelSupports\validators\MobileValidator',
+        'multiIn' => '\ModelSupports\validators\MultiRangeValidator',
+        'numerical' => '\ModelSupports\validators\NumberValidator',
+        'password' => '\ModelSupports\validators\PasswordValidator',
+        'phone' => '\ModelSupports\validators\PhoneValidator',
+        'in' => '\ModelSupports\validators\RangeValidator',
+        'email' => '\ModelSupports\validators\EmailValidator',
+        'match' => '\ModelSupports\validators\RegularExpressionValidator',
+        'required' => '\ModelSupports\validators\RequiredValidator',
+        'safe' => '\ModelSupports\validators\SafeValidator',
+        'string' => '\ModelSupports\validators\StringValidator',
+        'type' => '\ModelSupports\validators\TypeValidator',
+        'url' => '\ModelSupports\validators\UrlValidator',
+        'username' => '\ModelSupports\validators\UsernameValidator',
+        'fax' => '\ModelSupports\validators\FaxValidator',
+        'zip' => '\ModelSupports\validators\ZipValidator',
     ];
 
     /**
@@ -84,7 +84,7 @@ class ValidatorFactory
         $params['except'] = empty($except) ? [] : array_combine($except, $except); // 绑定拒绝的 scenario
 
         if (method_exists($object, $name)) {
-            $params['class'] = '\Model\validators\InlineValidator';
+            $params['class'] = '\ModelSupports\validators\InlineValidator';
             $params['method'] = $name;
         } else if (isset(self::$builtInValidators[$name])) {
             $params['class'] = self::$builtInValidators[$name];

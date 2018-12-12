@@ -9,8 +9,8 @@
 namespace Abstracts;
 
 use Helper\Exception;
-use Model\ValidatorFactory;
-use Model\validators\SafeValidator;
+use ModelSupports\ValidatorFactory;
+use ModelSupports\validators\SafeValidator;
 
 defined('APP_DEBUG') or define('APP_DEBUG', false);
 
@@ -257,7 +257,7 @@ abstract class Model extends Base
     /**
      * 获取验证器
      * @param array|null $attribute
-     * @return \Model\Validator[]
+     * @return \Abstracts\Validator[]
      * @throws Exception
      * @throws \ReflectionException
      */

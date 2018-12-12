@@ -22,7 +22,7 @@
     "autoload": {
         "psr-4": {
             "Abstracts\\": "src/abstracts",
-            "Model\\": "src/lib"
+            "ModelSupports\\": "src/supports"
         }
     },
     "autoload-dev": {

@@ -6,7 +6,7 @@
  * Version      :   1.0
  */
 
-namespace Model\validators;
+namespace ModelSupports\validators;
 
 use Abstracts\Validator;
 
