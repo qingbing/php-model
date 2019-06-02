@@ -238,4 +238,25 @@ class Validate
     {
         return !!preg_match('/^\d{6}$/', $var);
     }
+
+    /**
+     * @param array $vars
+     * @param string $method
+     * @param array $args
+     * @return bool
+     */
+    static public function multi(array $vars, $method, array $args = [])
+    {
+        foreach ($vars as $var) {
+            $return = call_user_func_array(['\Tools\Validate', $method], array_merge([$var], $args));
+            if ('checkNumber' === $method || 'checkString' === $method) {
+                if (0 !== $return) {
+                    return false;
+                }
+            } else if (true !== $return) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

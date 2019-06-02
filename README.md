@@ -184,6 +184,11 @@ var_dump(Validate::isUrl('https://www.phpcorner.net'));
 // 验证是否 邮政编码
 var_dump('isZipcode ');
 var_dump(Validate::isZipcode('100000'));
+// 多个值满足同一个验证
+var_dump('multi');
+var_dump(Validate::multi([10, 20], 'checkNumber', [10, 20]));
+var_dump(Validate::multi(['12', 'xxxx'], 'checkString', [2, 4]));
+var_dump(Validate::multi(['12', '2345'], 'isInteger'));
 
 ```
 
