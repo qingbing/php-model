@@ -21,6 +21,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Tools\\": "src/tools",
             "Abstracts\\": "src/abstracts",
             "ModelSupports\\": "src/supports"
         }
