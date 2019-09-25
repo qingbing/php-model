@@ -8,7 +8,7 @@
 
 namespace Test;
 
-use TestCore\Tester;
+use DBootstrap\Abstracts\Tester;
 use Tools\Validate;
 
 class TestValidate extends Tester

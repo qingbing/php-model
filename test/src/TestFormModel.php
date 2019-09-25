@@ -8,8 +8,8 @@
 
 namespace Test;
 
+use DBootstrap\Abstracts\Tester;
 use TestClass\TestForm;
-use TestCore\Tester;
 
 class TestFormModel extends Tester
 {

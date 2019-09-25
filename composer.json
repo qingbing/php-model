@@ -19,6 +19,9 @@
     "require": {
         "qingbing/php-helper": ">=1.0, <2.0"
     },
+    "require-dev": {
+        "qingbing/php-debug-bootstrap": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "Tools\\": "src/tools",
@@ -28,7 +31,6 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "TestCore\\": "test/core",
             "TestClass\\": "test/class",
             "Test\\": "test/src"
         }
